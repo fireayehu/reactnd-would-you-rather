@@ -28,8 +28,7 @@ let users = {
   johndoe: {
     id: "johndoe",
     name: "John Doe",
-    avatarURL:
-      "http://www.creditlenders.info/wp-content/uploads/cartoon-avatar-i-will-make-cartoon-avatar-of-you-for-6-seoclerks.png",
+    avatarURL: "https://tylermcginnis.com/would-you-rather/dan.jpg",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
       vthrdm985a262al8qx3do: "optionTwo",
