@@ -1,8 +1,28 @@
-import React from "react";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import LoadingBar from "react-redux-loading";
+import Login from "./Login";
+
+import { handleInitialData } from "../actions/shared";
+
 import "../App.css";
 
-function App() {
-  return <div className="App">Would you rather?</div>;
+class App extends Component {
+  componentDidMount() {
+    this.props.dispatch(handleInitialData());
+  }
+  render() {
+    return <Login />;
+  }
 }
 
-export default App;
+function mapStateToProps({ authedUser, users }) {
+  return {
+    signedIn: authedUser !== null,
+    authedUserName: authedUser ? users[authedUser].name : "",
+    authedUserAvatar: authedUser ? users[authedUser].avatarURL : "",
+  };
+}
+
+export default connect(mapStateToProps)(App);
