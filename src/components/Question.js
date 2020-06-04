@@ -92,12 +92,13 @@ class Question extends Component {
                         "0%": "#108ee9",
                         "100%": "#87d068",
                       }}
-                      percent={
+                      percent={Math.round(
                         (question.optionOne.votes.length /
                           (question.optionOne.votes.length +
                             question.optionTwo.votes.length)) *
-                        100
-                      }
+                          100,
+                        4
+                      )}
                     />
                     <Text>
                       {question.optionOne.votes.length} out of{" "}
@@ -127,12 +128,13 @@ class Question extends Component {
                         "0%": "#108ee9",
                         "100%": "#87d068",
                       }}
-                      percent={
+                      percent={Math.round(
                         (question.optionTwo.votes.length /
                           (question.optionOne.votes.length +
                             question.optionTwo.votes.length)) *
-                        100
-                      }
+                          100,
+                        4
+                      )}
                     />
                     <Text>
                       {question.optionTwo.votes.length} out of{" "}
