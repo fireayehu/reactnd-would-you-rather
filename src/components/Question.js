@@ -14,6 +14,7 @@ import {
   Button,
 } from "antd";
 import { handleAddQuestionAnswer } from "../actions/questions";
+import NotFound from "./NotFound";
 
 const { Text } = Typography;
 const { Content } = Layout;
@@ -42,7 +43,9 @@ class Question extends Component {
       lineHeight: "30px",
     };
     const { question, author, authedUserDetails, id, detailed } = this.props;
-
+    if (!question) {
+      return <NotFound />;
+    }
     return (
       <Card title={`${author.name} asks:`} style={{ width: "370px" }}>
         <Row style={{ width: "370px" }}>
