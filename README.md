@@ -1,3 +1,5 @@
+# Would You Rather
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) for the Google Udacity React Nanodegree program.
 
 ## Available Scripts
@@ -56,3 +58,11 @@ You will also see any lint errors in the console.
     ├── index.css # Global styles.
     └── index.js # Used for DOM rendering only.
 ```
+
+## Author
+
+- **Fireayehu Zekarias**
+
+## Acknowledgments
+
+- Udacity For the providing the project
