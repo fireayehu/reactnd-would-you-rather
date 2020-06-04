@@ -7,6 +7,7 @@ import Home from "./Home";
 import QuestionDetails from "./QuestionDetails";
 import NewQuestion from "./NewQuestion";
 import NavBar from "./NavBar";
+import LeaderBoard from "./LeaderBoard";
 
 import { handleInitialData } from "../actions/shared";
 
@@ -34,7 +35,7 @@ class App extends Component {
               <Route path="/" exact component={Home} />
               <Route path="/questions/:id" component={QuestionDetails} />
               <Route path="/add" component={NewQuestion} />
-              <Route path="/leaderboard" component={Home} />
+              <Route path="/leaderboard" component={LeaderBoard} />
             </div>
           )}
         </>

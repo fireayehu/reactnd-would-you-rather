@@ -47,7 +47,14 @@ class Question extends Component {
       return <NotFound />;
     }
     return (
-      <Card title={`${author.name} asks:`} style={{ width: "370px" }}>
+      <Card
+        title={
+          detailed && authedUserDetails.answers[question.id]
+            ? `Asked by ${author.name}`
+            : `${author.name} asks:`
+        }
+        style={{ width: "370px" }}
+      >
         <Row style={{ width: "370px" }}>
           <Col span={4} style={{ borderRightWidth: "2px" }}>
             <Col>
