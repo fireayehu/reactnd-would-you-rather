@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import LoadingBar from "react-redux-loading";
 import Login from "./Login";
@@ -8,7 +8,7 @@ import QuestionDetails from "./QuestionDetails";
 import NewQuestion from "./NewQuestion";
 import NavBar from "./NavBar";
 import LeaderBoard from "./LeaderBoard";
-
+import NotFound from "./NotFound";
 import { handleInitialData } from "../actions/shared";
 
 import "../App.css";
@@ -32,10 +32,13 @@ class App extends Component {
             <Login />
           ) : (
             <div>
-              <Route path="/" exact component={Home} />
-              <Route path="/questions/:id" component={QuestionDetails} />
-              <Route path="/add" component={NewQuestion} />
-              <Route path="/leaderboard" component={LeaderBoard} />
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/questions/:id" component={QuestionDetails} />
+                <Route path="/add" exact component={NewQuestion} />
+                <Route path="/leaderboard" exact component={LeaderBoard} />
+                <Route component={NotFound} />
+              </Switch>
             </div>
           )}
         </>
